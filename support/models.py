@@ -22,20 +22,20 @@ class Ticket(models.Model):
         if not self.ticket_id:
             now = datetime.now()
             # Generate ticket+_id as TT-YYYYMMDD-NNN(NNN is a three digit number)
-            today_tickets_count = Ticket.objectsfilter(created_at__date=now.date()).count() + 1
+            today_tickets_count = Ticket.objects.filter(created_at__date=now.date()).count() + 1
             self.ticket_id = f"TT-{now.year}-{now.month:02d}{now.day:02d}-{today_tickets_count:03d}"
         super().save(*args, **kwargs)
     
-    # def __str__(self):
-    #     return self.ticket_id
+    def __str__(self):
+        return f"{self.ticket_id} - {self.subject}"
 
 
-class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='comments', null=True, blank=True)
+class Comment(models.Model): 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter") # Many to one
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='comments', null=True, blank=True) # Many to one
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
-    # def __str__(self):
-    #     return self.comment
+    def __str__(self):
+        return f"{self.ticket_id} - {self.ticket}"
 
