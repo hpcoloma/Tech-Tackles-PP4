@@ -1,1 +1,1 @@
-web: gunicorn support.wsgi
+web: gunicorn tech_tackles.wsgi
