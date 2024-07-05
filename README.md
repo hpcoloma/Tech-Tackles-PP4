@@ -1,131 +1,151 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tech Tackles- IT Support Ticketing System with Knowledge Base
 
-Welcome Holly Ann Coloma,
+# Table of Contents
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Project Overview
 
-## Gitpod Reminders
+Tech Tackles is a comprehensive IT support ticketing system designed to streamline the process of issue reporting and resolution. With an intuitive web interface, users can easily submit tickets, track progress, and communicate with IT specialists. The system prioritizes efficiency and user satisfaction, featuring automated workflows, detailed reporting, and a knowledge base for self-service solutions. ITease aims to reduce downtime and enhance productivity by providing a seamless support experience.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Develop a comprehensive web application for managing IT support tickets within an organization, incorporating a knowledge base to help users find solutions to common issues. The project will include front-end development with HTML, CSS, and JavaScript, and back-end development using Python and Django
 
-`python3 -m http.server`
+### Screenshots
 
-A blue button should appear to click: _Make Public_,
+### Link to Live project
 
-Another blue button should appear to click: _Open Browser_.
+### Objective
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## UX/UI
+### The Strategy Plane
 
-A blue button should appear to click: _Make Public_,
+VISION
+To create a user-friendly IT support ticketing system and comprehensive knowledge base that enhances the efficiency of IT support processes, improves user satisfaction, and reduces resolution times.
 
-Another blue button should appear to click: _Open Browser_.
+OBJECTIVES
+- Streamline the process of ticket submission and management.
+- Provide a robust knowledge base to empower users with self-service capabilities.
+- Enhance collaboration among IT support staff for faster problem resolution.
+- Enable administrators to manage the system efficiently with advanced tools and reporting capabilities.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+USER NEEDS
+- End-Users (Employees/Customers)
+    - Easy Ticket Submission: Simple and quick process to submit support tickets.
+    - Self-Service Solutions: Access to a comprehensive knowledge base for common issues and FAQs.
+    - Feedback Mechanism: Ability to provide feedback on the support received.
+      
+- IT Support Staff
+    - Efficient Ticket Management: Tools to prioritize and manage tickets effectively.
+    - Access to Information: Quick access to Knowledge base and relevant information for troubleshooting.
 
-To log into the Heroku toolbelt CLI:
+- Administrators
+    - User Management: Tools to manage users and roles effectively.
+    - Ticket Management: Ability to update, assign and delete tickets
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+### The Scope Plane 
+FUNCTIONS
+- End User
+  - Ticket Submission:
+    - Simple form for submitting support tickets.
+    - Fields: Issue Description, Category, Urgency, Attachments.
+    - Auto-suggestions from the knowledge base while typing.
 
-### Connecting your Mongo database
+  - Knowledge Base Access:
+    - Search functionality for finding articles.
+    - Categories and tags for easy navigation.
+    - Article ratings and feedback options.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+  - Ticket Status Updates:
+    - Dashboard showing submitted tickets and their statuses.
+    - Real-time notifications for updates and resolutions.
 
-------
+- IT Support Staff
+ - Ticket Management:
+    - Dashboard with all tickets sorted by status (new, in-progress, resolved).
+    - Filters for priority, category, date, and assigned staff.
+  
+  - Prioritization and Assignment:
+    - Ability to prioritize tickets based on urgency and impact.
+    - Assign tickets to specific team members.
 
-## Release History
+- Internal Collaboration:
+    - Internal notes and comments section within each ticket.
+    - Notifications for ticket updates and collaboration messages.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Knowledge Base Contributions:
+    - Tools to create, edit, and categorize knowledge base articles.
+    - Option to mark tickets as candidates for new knowledge base articles.
 
-**June 18, 2024,** Add Mongo back into template
+- Administrator
+  - User Management:
+    - Add, remove, and manage user roles and permissions.
+    - Configure different access levels for end-users, support staff, and administrators.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+  - System Configuration:
+    - Customize ticket form templates.
+    - Configure email notifications and templates.
 
-**May 28 2024:** Fix Mongo and Links installs
+CONTENTS
+- Knowledge Base
+  - Initial Articles
+      - Common issues and resolutions
+      - FAQ troubleshooting guides
+  - Ongoing Contribution
+    - Regular updates and additions based on new issues and solutions.
+    - User feedback integration for improving existing articles.
 
-**April 26 2024:** Update node version to 16
+- Documentation
+  - End User Guides
+     - How to search the knowledge base.
+     - How to submit a ticket.
+     - Understanding ticket status update
+  - IT Support Staff Manuals
+    - How to manage and prioritize tickets.
+    - Using the internal collaboration tools.
+    - Contributing to the knowledge base.
+  - Administrator Manuals
+    - Managing user roles and permissions.
+    - System configuration and customization.
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### The Structure Plane - defines the layout and navigation of your product, as well as the interaction patterns and feedback mechanisms that enable users to achieve their goals. how will your product work and how will users move through it?
+- User Story/Acceptance Criteria
+- User Story/Acceptance Criteria
+- User Story/Acceptance Criteria
+- User Story/Acceptance Criteria
+- User Story/Acceptance Criteria
+- EPICS
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### The Skeleton Plane - defines the visual hierarchy and aesthetics of your product, as well as the typography, color, imagery, and icons that convey meaning and emotion. how will your product look and feel and how will users perceive it?
+- Wireframe 
+-	Flowchart/Database Schema - https://drawsql.app/ Entity Relationship Diagram
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### The Surface Plane - the actual interface that users see and interact with
+- Colour Scheme
+-	Fonts Used
+-	Images
+- Features – Actual website
+  - Function 1
+  - Function 2
+  - Function 3
+## Future Feature Considerations
+## Testing
+  - User Story Testing
+  - Automated testing
+  - CI Python Linter – 
+  - Lighthouse
+  - Mobile
+  - Desktop
+  - W3C CSS Validator
+  - W3C HTML validator
+  - JSHint for Javascript
+  - Other Testing
+    - Functionality Testing
+    - Compatibility Testing – different devices
+    - Crossbrowser testing
+## Bugs and Potential issues
+## Technologies and language
+## Development
+## Deployment on Heroku
+## Credits
+## Acknowledgement
