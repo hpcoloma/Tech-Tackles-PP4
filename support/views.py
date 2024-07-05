@@ -26,14 +26,15 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
+        form = AuthenticationForm(request)
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
 
-        # if user is not None:
-        #     login(request, user)
-        #     return redirect('home')
-        # else:
-        #     messages.error(request, 'Invalid username or password')
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password')
     
     return render(request, 'account/login.html')
