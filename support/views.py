@@ -23,5 +23,21 @@ def create_ticket(request):
     return render(reuest, 'support/create_ticket.html'), {'form': form}
 
 
+@login_required
+def ticket_detail(request, ticket_id):
+    ticket = get_object_or_404(Ticket, id="ticket_id")
+    comments = ticket.comments.all()
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.ticket = ticket
+            comment.user = request.user
+            comment.save()
+            return redirect('ticket_detail', ticket_id=ticket.id)
+    else:
+        comment_form = CommentForm()
+    return render(request, 'support/ticket_detail.html',{'ticket': ticket, 'comments': comments}) 
+
 
 
