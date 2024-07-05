@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket List</title>
-</head>
-
-<body>
-    <h1>TICKET LIST</h1>
+{% extends "base.html" %}
+{% block content %}
+<h1>TICKET LIST</h1>
     {% for ticket in object_list %}
     <h2>{{ ticket.ticket_id }}</h2>
     <p>{{ ticket.subject }}</p>
     <p>Author: {{ ticket.user }}</p>
     {% endfor %}
-</body>
 
-</html>
+{% endblock %}
