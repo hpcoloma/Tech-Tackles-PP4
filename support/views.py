@@ -2,6 +2,7 @@ from django.shortcuts import render, get_list_or_404
 from django.views import generic
 from .models import Ticket
 from .forms import UserForm
+from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 class TicketList(generic.ListView):
@@ -24,17 +25,3 @@ def register(request):
     return render(request, 'account/register.html', {'form': form})
 
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request)
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Invalid username or password')
-    
-    return render(request, 'account/login.html')
